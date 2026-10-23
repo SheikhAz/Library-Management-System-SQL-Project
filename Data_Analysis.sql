@@ -36,3 +36,9 @@ WHERE rental_price > 6;
 
 
 --! Task 12: Retrieve the List of Books Not Yet Returned
+
+
+SELECT i.issued_id,i.issued_book_name , i.issued_date
+FROM issued_status AS i
+LEFT JOIN return_status AS r ON r.issued_id = i.issued_id
+WHERE r.return_date IS NULL ;
