@@ -66,3 +66,34 @@ ADD CONSTRAINT fk_return_issued
 FOREIGN KEY (issued_id)
 REFERENCES issued_status(issued_id)
 ON DELETE CASCADE;
+
+
+ALTER TABLE return_status
+ADD COLUMN book_quality VARCHAR(100);
+
+SELECT * FROM return_status;
+
+UPDATE return_status
+SET book_quality = CASE
+    WHEN return_id = 'RS102' THEN 'Good'
+    WHEN return_id = 'RS103' THEN 'Damaged'
+    WHEN return_id = 'RS104' THEN 'Good'
+    WHEN return_id = 'RS105' THEN 'Good'
+    WHEN return_id = 'RS106' THEN 'Damaged'
+    WHEN return_id = 'RS107' THEN 'Good'
+    WHEN return_id = 'RS108' THEN 'Good'
+    WHEN return_id = 'RS109' THEN 'Damaged'
+    WHEN return_id = 'RS110' THEN 'Good'
+    WHEN return_id = 'RS111' THEN 'Good'
+    WHEN return_id = 'RS112' THEN 'Damaged'
+    WHEN return_id = 'RS113' THEN 'Good'
+    WHEN return_id = 'RS114' THEN 'Good'
+    WHEN return_id = 'RS115' THEN 'Damaged'
+    WHEN return_id = 'RS116' THEN 'Good'
+    WHEN return_id = 'RS117' THEN 'Good'
+    WHEN return_id = 'RS118' THEN 'Damaged'
+    WHEN return_id = 'RS134' THEN 'Good'
+    WHEN return_id = 'RS135' THEN 'Good'
+    WHEN return_id = 'RS136' THEN 'Good'
+    ELSE book_quality
+END;
