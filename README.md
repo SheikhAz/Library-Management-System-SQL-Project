@@ -13,7 +13,7 @@ The diagram below illustrates the main tables and relationships in the
 library database.
 
 ![Library Management System ER
-Diagram](images/library-database-er-diagram.png)
+Diagram](images/library-database-er-diagram.jpg)
 
 ## Database Schema
 
